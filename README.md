@@ -23,7 +23,7 @@ In each respective folder on any topic, don't forget to read the rules below to 
 
 <h3>How To Contribute</h3>
 <p>⌛️ In order to do successful contribution you must read the rules at the bottom; all pull requests will be accepted by those who correctly submitted their PR.</p>
-<p><strong>Star the repository</strong></p>
+<h1><bold>Star the repository</bold></h1>
 <p>⌛️ Patience is key! If the pull request is not merged, tell me in the comment section!</p>
 <br/>
 <h3>🛡 Rules</h3>
