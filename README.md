@@ -32,7 +32,7 @@ In each respective folder on any topic, don't forget to read the rules below to 
 * Clone your fork down to your local machine
 
 ```markdown
-git clone https://github.com/your-username/hacktoberfest.git
+git clone https://github.com/your-username/DSA_Hacktoberfest.git
 ```
 
 * Create a branch
