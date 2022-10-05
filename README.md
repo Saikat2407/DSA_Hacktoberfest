@@ -26,6 +26,34 @@ In each respective folder on any topic, don't forget to read the rules below to 
 <h1><bold>Star the repository</bold></h1>
 <p>⌛️ Patience is key! If the pull request is not merged, tell me in the comment section!</p>
 <br/>
+
+## Getting started
+* Fork this repository (Click the Fork button in the top right of this page, click your Profile Image)
+* Clone your fork down to your local machine
+
+```markdown
+git clone https://github.com/your-username/hacktoberfest.git
+```
+
+* Create a branch
+
+```markdown
+git checkout -b branch-name
+```
+
+* Make your changes (choose from any task below)
+* Commit and push
+
+```markdown
+git add .
+git commit -m 'Commit message'
+git push origin branch-name
+```
+
+* Create a new pull request from your forked repository (Click the `New Pull Request` button located at the top of your repo)
+* Wait for your PR review and merge approval!
+* __Star this repository__ 
+
 <h3>🛡 Rules</h3>
 <ul>
   <li>⚔️ Add link of the problem as comments in the code if contributing solution of any problems from Leetcode, GeekForGeeks, Codechef or Codeforces, etc. No need to add entire main function.</li>
