@@ -1,5 +1,3 @@
-//Karan Ralhan
-//Kdeveloper2000
 #include <iostream>
 using namespace std;
 //this takes O(n^2) any how
