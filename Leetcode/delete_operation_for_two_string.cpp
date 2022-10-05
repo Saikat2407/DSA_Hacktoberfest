@@ -1,6 +1,3 @@
-// Name : Debapriya Chandra
-// github id: debapriya36
-// leetcode id: debo_03
 // leetcode problem link : https://leetcode.com/problems/delete-operation-for-two-strings/
 
 class Solution {
