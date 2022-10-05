@@ -1,6 +1,4 @@
-// Name : Debapriya Chandra
-// github id: debapriya36
-// leetcode id: debo_03
+
 // leetcode problem link : https://leetcode.com/problems/longest-common-subsequence/
 
 class Solution {
