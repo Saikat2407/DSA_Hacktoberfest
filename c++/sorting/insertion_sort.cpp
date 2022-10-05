@@ -1,3 +1,5 @@
+//Karan Ralhan
+//Kdeveloper2000
 #include <iostream>
 using namespace std;
 //this takes O(n^2) any how
@@ -23,7 +25,9 @@ void InsertionSir(int A[], int n)
     {
         int x = A[i];
         int j = i - 1;
-        while (j >= -1 && x > A[j])
+        //The comparison should have opposite sign than the assigned one.
+        //As sorting leads to the ascending order of the array.
+        while (j >=0  && x < A[j])
         {
             A[j+1] = A[j];
             j--;
