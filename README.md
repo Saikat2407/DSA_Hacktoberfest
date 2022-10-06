@@ -57,8 +57,7 @@ git push origin branch-name
 <h3>🛡 Rules</h3>
 <ul>
   <li>⚔️ Add link of the problem as comments in the code if contributing solution of any problems from Leetcode, GeekForGeeks, Codechef or Codeforces, etc. No need to add entire main function.</li>
-   <li>⚔️ Dont forget to star this repository and follow me for successful merge.</li>
-    <li>⚔️ Please put your Name and Github id as comments at top of the code file to get accepted.</li>
+  <li>⚔️ Dont forget to star this repository and follow me for successful merge.</li>
   <li>⚔️ Add the proper extension to your code file. Examples: .c, .js, .cpp , .py or .java.</li>
   <li>⚔️ Give your file a proper name related to your program in snake_case.</li>
   <li>⚔️ Put your files in correct folder like .cpp file in  c++ folder or .py file in python folder.</li>
