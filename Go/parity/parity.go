@@ -1,6 +1,7 @@
 // case from Hackerank
 // Name : Teddy Firman
 // Github ID : TeddyFirman
+---------------------------------------
 
 package parity
 
@@ -116,3 +117,6 @@ func checkError(err error) {
 		panic(err)
 	}
 }
+
+
+*//////////////////////////////////////////////////////*
