@@ -1,3 +1,5 @@
+// https://www.codechef.com/submit/BINARYSUB
+
 #include <bits/stdc++.h>
 using namespace std;
 long long int solve(long long int x){
