@@ -1,4 +1,4 @@
-// Find shortest path using Floyd-Warshall Algorithm in C++
+// Find shortes path using Floyd-Warshall Algorithm in C++
 
 #include <iostream>
 using namespace std;
