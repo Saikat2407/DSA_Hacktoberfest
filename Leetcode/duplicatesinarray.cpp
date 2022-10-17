@@ -14,5 +14,15 @@ public:
         }
         return ans;
     }
-};
+}
 
+int main(){
+    int arr[]={4,2,1,0,1,2,6};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    vector<int>res=findDupliactes(arr,n);
+    cout<<"The repeating elements are: "<<endl;
+    for(int i:res){
+        cout<< i <<" "<<endl;
+    } 
+    return 0;
+    }
