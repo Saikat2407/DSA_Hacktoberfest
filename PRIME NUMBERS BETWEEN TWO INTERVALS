@@ -1,0 +1,50 @@
+#include <iostream>
+
+#include<conio.h>
+
+using namespace std;
+
+int main()
+
+{
+
+    int n1,n2,p;
+
+    cout<<"Enter the range to print the prime numbers:\n";
+
+    cin>>n1>>n2;
+
+
+
+    for(int i=n1;i<=n2;i++)    //loop will run from first number till last number
+
+    {
+
+        p=1;                              /*by default we'll take value as 1 and when the next loop will start then it'll turn this value as 0 while violating the condition of being a prime number*/
+
+        for(int j=2;j<=i/2;j++)    /*this loop will run from 2 as to check that the number is not getting divided by any natural number(condition of prime number)*/
+
+        {
+
+            if(i%j==0)                   /*this is checking that the number is not getting divided by any natural number*/
+
+                {
+
+                    p=0;                    /*p=0 when the number is divided by other natural numbers(violation of condition of prime number)*/
+
+                    break;
+
+                }
+
+        }
+
+            if(p==1)
+
+                cout<<i<<", ";
+
+    }
+
+    return 0;
+
+
+}
