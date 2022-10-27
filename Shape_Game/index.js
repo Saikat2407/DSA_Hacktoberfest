@@ -1,7 +1,8 @@
+let canvas;
+let ctx;
+
 function Game(){
     this.player = null;
-    this.canvas
-    this.ctx
     this.mouse = {onCanvas:false, position: {x: -1, y: -1}}
     this.bullets = [];
     this.enemies = []
@@ -12,15 +13,17 @@ function Game(){
     }
     
     this.start = ()=>{
-        this.newContainer()
-        this.canvas = document.getElementById('view');
-        this.canvas.width =  500;
-        this.canvas.height =  500;
-        this.ctx = this.canvas.getContext('2d');
-
-        this.player =  new Player(this.ctx, this.canvas, this.mouse);
-        this.player.create(0, 0, 10, "red")
         
+        let domSize = screen.width
+        console.log(domSize);
+        this.newContainer()
+        canvas = document.getElementById('view');
+        ctx = canvas.getContext('2d');
+        canvas.width =  750;
+        canvas.height =  750;
+        this.player =  new Player(ctx, canvas, this.mouse,"orange");
+        this.player.create(0, 0, 10)
+        this.enemies.push(new fastCircleEnemy(350,350))
         this.draw()
        
     }
@@ -32,14 +35,14 @@ function Game(){
         // console.log(player.x)
 
     
-        this.ctx.fillStyle = "green";
-        var playerObj= {}
-        // playerObj[playerName] = {x:player.getX(),y:player.getY(),r:player.angle,idle:0,color:player.color}
-        // socket.sendPlayer(JSON.stringify(playerObj))
-        // console.log(r)
-        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
-        
-        this.player.render();
+      
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        this.enemies.forEach(enemy => {
+            enemy.render()
+            enemy.move()
+            enemy.parallaxFunc();
+        });
+        this.bullets = this.player.render();
         // this.player.status();
         // if(jQuery.isEmptyObject(players)===false){
         //     // console.log(players)

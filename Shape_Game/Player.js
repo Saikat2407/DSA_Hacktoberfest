@@ -1,4 +1,4 @@
-function Player(ctx, canvas, mouse)  {
+function Player(ctx, canvas, mouse, color)  {
     this.x = 100;
     this.y = 100;
     this.clientX = 0;
@@ -9,6 +9,7 @@ function Player(ctx, canvas, mouse)  {
     this.bulletSpeed = 10;
     this.bulletArray = []
     this.maxBulletDistance = 300;
+    this.color = color
 
     this.ctx = ctx
     this.canvas = canvas
@@ -34,6 +35,7 @@ function Player(ctx, canvas, mouse)  {
          }
     }
     this.createBullet =  ()=>{
+        console.info(window.getComputedStyle)
         this.bulletArray.push({x:this.x, y:this.y+(10/3), angle:this.angle, distanceTraveled: 0})
     }
     this.addKeyControls = ()=>{
@@ -99,7 +101,7 @@ function Player(ctx, canvas, mouse)  {
                 // console.log(e, this.mouse.position.x, this.mouse.position.y)
                 // console.log((player.angle *180/Math.PI)-360)
             }
-            document.onmousemove = mouse
+            canvas.onmousemove = mouse
         }
 
         this.getRndColor = ()=>{
@@ -136,6 +138,7 @@ function Player(ctx, canvas, mouse)  {
                 let bullet = this.bulletArray[i];
                 this.ctx.beginPath()
                 this.ctx.arc(bullet.x, bullet.y, 2, 0, Math.PI * 2, true);
+                this.ctx.fillStyle = "black"
                 this.ctx.fill()
                 this.ctx.closePath()
                 bullet.x -= this.bulletSpeed * Math.cos(bullet.angle+Math.PI/2)
@@ -155,7 +158,6 @@ function Player(ctx, canvas, mouse)  {
 
             this.updateAngle()
             this.ctx.save();
-            // this.ctx.fillStyle = this.color
             this.ctx.beginPath();
             
             // triangle
@@ -166,6 +168,7 @@ function Player(ctx, canvas, mouse)  {
             this.ctx.lineTo(this.x+tempPoints[1][0], this.y+tempPoints[1][1]); //draws a line
             this.ctx.lineTo(this.x+tempPoints[2][0], this.y+tempPoints[2][1]); 
             // this.ctx.lineTo(this.x + tempPoints[0][0], this.y+tempPoints[0][1]+this.size/3); //x,y values to start at
+            this.ctx.fillStyle = this.color
             this.ctx.fill()
             this.ctx.closePath();
             
@@ -191,6 +194,7 @@ function Player(ctx, canvas, mouse)  {
             this.hitBoxCheck()
             this.vectorPhysics()
             this.renderBullet()
+            return this.bulletArray
             // console.log(console.log(Math))
         } 
     }
