@@ -1,6 +1,6 @@
 //binary search
-//Leetcode Question NO. 34
 //Find First and Last Position of Element in Sorted Array.
+// https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
 //time: O(logN), space: O(1)
 class Solution {
 public:
