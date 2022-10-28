@@ -9,14 +9,15 @@ function Player(ctx, canvas, mouse, color)  {
     this.bulletSpeed = 10;
     this.bulletArray = []
     this.maxBulletDistance = 300;
-    this.color = color
+    this.color = color;
+    this.size;
 
     this.ctx = ctx
     this.canvas = canvas
     this.mouse = mouse 
     this.keystate={w:false, a:false, s:false, d:false};
     
-    this.hitBoxCheck = ()=>{
+    this.outOfBoundsCheck = ()=>{
         this.x = this.x + this.size > this.canvas.width ? this.canvas.width - this.size : this.x;
         this.y = this.y + this.size > this.canvas.height ? this.canvas.height - this.size: this.y;
         this.x = this.x - this.size/2 < 0 ? this.size/2: this.x;
@@ -35,13 +36,11 @@ function Player(ctx, canvas, mouse, color)  {
          }
     }
     this.createBullet =  ()=>{
-        console.info(window.getComputedStyle)
         this.bulletArray.push({x:this.x, y:this.y+(10/3), angle:this.angle, distanceTraveled: 0})
     }
     this.addKeyControls = ()=>{
         
             addEventListener('keydown', (e)=>{
-                console.log(e)
                 
                 if(e.keyCode===40||e.code==='KeyS'){
                     console.log("Guy go backwards")
@@ -191,7 +190,7 @@ function Player(ctx, canvas, mouse, color)  {
             this.ctx.arc(this.mouse.position.x, this.mouse.position.y, 5, 0, Math.PI * 2, true)
             this.ctx.stroke();
             this.ctx.restore()
-            this.hitBoxCheck()
+            this.outOfBoundsCheck()
             this.vectorPhysics()
             this.renderBullet()
             return this.bulletArray

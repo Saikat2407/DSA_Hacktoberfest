@@ -11,7 +11,26 @@ function Game(){
         document.body.innerHTML = "<canvas id=\"view\" style=\" background: #eeeeee;display:flex; justify-content:center; \"><canvas>"
         
     }
-    
+    this.checkBulletHitBoxes = ()=>{
+        if(this.enemies.length>0&&this.bullets.length>0){
+            for(let i = 0; i<this.bullets.length; i++){
+                let currentBullet = this.bullets[i]
+                for(let j = 0; j<this.enemies.length; j++){
+                    let currentEnemy = this.enemies[j];
+                    let distanceX = Math.pow(currentEnemy.x
+                        -currentBullet.x,2)
+                    let distanceY = Math.pow(currentEnemy.y
+                        -currentBullet.y,2)
+                    let distance = Math.sqrt(distanceX+distanceY)
+                    if(distance<currentEnemy.size){
+                        console.log('hit')
+                        this.bullets.splice(i,1)
+                        this.enemies.splice(j,1)
+                    };
+                }
+            }
+        }
+    }
     this.start = ()=>{
         
         let domSize = screen.width
@@ -43,6 +62,7 @@ function Game(){
             enemy.parallaxFunc();
         });
         this.bullets = this.player.render();
+        this.checkBulletHitBoxes()
         // this.player.status();
         // if(jQuery.isEmptyObject(players)===false){
         //     // console.log(players)

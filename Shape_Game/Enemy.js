@@ -70,8 +70,8 @@ function fastCircleEnemy(x, y){
         this.x = this.x + 200 / 2 < 0 ? canvas.width - this.size : this.x;
         this.y = this.y + 200 / 2 < 0 ? canvas.height - this.size : this.y;
         if(oldX !== this.x || oldY!== this.y){
-            let randomNumber = Math.random()/10
-            this.angle += (1/5)-randomNumber;
+            let randomNumber = Math.random()/5
+            this.angle += (1/10)-randomNumber;
         }
     }
 }
