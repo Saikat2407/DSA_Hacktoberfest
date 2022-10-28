@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class Solution
+{
+    public:
+    int helper(int ind,int W,int wt[],int val[],int n,vector<vector<int>> &dp){
+        if(ind==n){return 0;}
+        if(dp[W][ind]!=-1){return dp[W][ind];}
+        int res=INT_MIN;
+        if(wt[ind]<=W){
+            res=max(res,val[ind]+helper(ind+1,W-wt[ind],wt,val,n,dp));
+        }
+        res=max(res,helper(ind+1,W,wt,val,n,dp));
+        dp[W][ind]=res;
+        return res;
+    }
+    //Function to return max value that can be put in knapsack of capacity W.
+    int knapSack(int W, int wt[], int val[], int n) 
+    { 
+       vector<vector<int>> dp(W+1,vector<int>(n+1,-1));
+       return helper(0,W,wt,val,n,dp);
+    }
+};
+
+
+int main()
+ {
+    //taking total testcases
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        //reading number of elements and weight
+        int n, w;
+        cin>>n>>w;
+        
+        int val[n];
+        int wt[n];
+        
+        //inserting the values
+        for(int i=0;i<n;i++)
+            cin>>val[i];
+        
+        //inserting the weights
+        for(int i=0;i<n;i++)
+            cin>>wt[i];
+        Solution ob;
+        //calling method knapSack()
+        cout<<ob.knapSack(w, wt, val, n)<<endl;
+        
+    }
+	return 0;
+}
