@@ -1,14 +1,14 @@
 function Player(ctx, canvas, mouse, color)  {
-    this.x = 100;
-    this.y = 100;
+    this.x = 250;
+    this.y = 250;
     this.clientX = 0;
     this.clientY = 0;
     this.angle = 0;
     this.speed = 0;
     this.maxSpeed = 5;
-    this.bulletSpeed = 10;
+    this.bulletSpeed = 15;
     this.bulletArray = []
-    this.maxBulletDistance = 300;
+    this.maxBulletDistance = 500;
     this.color = color;
     this.size;
 
@@ -113,6 +113,8 @@ function Player(ctx, canvas, mouse, color)  {
         }
 
         this.create =(x, y, size, color)=>{
+            this.x = x
+            this.y = y
             this.size = size;
             // this.speed = 20;
   
